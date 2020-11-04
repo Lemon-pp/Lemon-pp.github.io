@@ -72,6 +72,30 @@
   </entry>
   
   <entry>
+    <title>Oracle彻底卸载干净教程</title>
+    <link href="http://example.com/2020/11/04/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/"/>
+    <id>http://example.com/2020/11/04/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/</id>
+    <published>2020-11-04T07:02:25.000Z</published>
+    <updated>2020-11-04T10:48:33.789Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>参考博客：</strong><a href="https://blog.csdn.net/a772304419/article/details/79365744">https://blog.csdn.net/a772304419/article/details/79365744</a></p><h4 id="1-关闭所有服务"><a href="#1-关闭所有服务" class="headerlink" title="1.关闭所有服务"></a>1.关闭所有服务</h4><p>​    打开cmd，运行services.msc,关闭oracle所有的服务。</p><p>​    <img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184732375.png" alt="image-20201104184732375"></p><h4 id="2-打开注册表：打开cmd-运行regedit。"><a href="#2-打开注册表：打开cmd-运行regedit。" class="headerlink" title="2.打开注册表：打开cmd,运行regedit。"></a>2.打开注册表：打开cmd,运行regedit。</h4><ol><li><p>删除 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ 该路径下所有以oracle开始的服务名称，这个键是标识Oracle在windows下注册的各种服务。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184741757.png" alt="image-20201104184741757"></p></li><li><p>删除：</p><p> HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE</p><p> 删除该oracle目录，该目录下注册着Oracle数据库的软件安装信息。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184749535.png" alt="image-20201104184749535"></p></li><li><p>删除注册的oracle事件日志：</p><p>路径：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application</p><p>删除注册表的以oracle开头的所有项目。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184758069.png" alt="image-20201104184758069"></p></li></ol><h4 id="3-删除环境变量"><a href="#3-删除环境变量" class="headerlink" title="3.删除环境变量"></a>3.删除环境变量</h4><p> 鼠标右键右单击”我的电脑–&gt;属性–&gt;高级–&gt;环境变量–&gt;PATH 变量。</p><p>  删除Oracle在该值中的内容。注意:path中记录着一堆操作系统的目录，在windows中各个目录之间使用分号（;）隔开的，删除时注意。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184807975.png" alt="image-20201104184807975"></p><h4 id="4-重启操作系统"><a href="#4-重启操作系统" class="headerlink" title="4. 重启操作系统"></a>4. 重启操作系统</h4><h4 id="5-删除Oracle-Home下的所有数据。"><a href="#5-删除Oracle-Home下的所有数据。" class="headerlink" title="5.删除Oracle_Home下的所有数据。"></a>5.删除Oracle_Home下的所有数据。</h4><p>   （Oracle_Home指Oracle程序的安装目录）</p><h4 id="6-删除C-Program-Files下oracle目录。"><a href="#6-删除C-Program-Files下oracle目录。" class="headerlink" title="6.删除C:\Program Files下oracle目录。"></a>6.删除C:\Program Files下oracle目录。</h4><p>（该目录视Oracle安装所在路径而定）</p><h4 id="7-删除开始菜单下oracle项"><a href="#7-删除开始菜单下oracle项" class="headerlink" title="7.删除开始菜单下oracle项"></a>7.删除开始菜单下oracle项</h4><p>如：C:\Documents and Settings\All Users\「开始」菜单\程序\Oracle - Ora10g</p><p>   不同的安装这个目录稍有不同。</p><p>   如果不删除开始菜单下的Oracle相关菜单目录，没关系，这个不影响再次安装Oracle.当再次安装Oracle时，该菜单会被替换。</p><p>至此，Windows平台下Oracle就彻底卸载了。 </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;参考博客：&lt;/strong&gt;&lt;a href=&quot;https://blog.csdn.net/a772304419/article/details/79365744&quot;&gt;https://blog.csdn.net/a772304419/article/detail</summary>
+      
+    
+    
+    
+    <category term="Oracle" scheme="http://example.com/categories/Oracle/"/>
+    
+    
+    <category term="oracle" scheme="http://example.com/tags/oracle/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Oracle出现的问题总结</title>
     <link href="http://example.com/2020/11/04/Oracle%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
     <id>http://example.com/2020/11/04/Oracle%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</id>
@@ -87,30 +111,6 @@
 &lt;p&gt;原因：PROCESS、SESSION数量设置的不够，导致ORACLE在高峰期的时候，没有足够的PROCESS对连接上来的客户服务进行分配。（连接太多崩溃了）&lt;/p&gt;
 &lt;p&gt;解决办法：&lt;/p&gt;
 &lt;p&gt;​    1.方法一：增大</summary>
-      
-    
-    
-    
-    <category term="Oracle" scheme="http://example.com/categories/Oracle/"/>
-    
-    
-    <category term="oracle" scheme="http://example.com/tags/oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Oracle彻底卸载干净教程</title>
-    <link href="http://example.com/2020/11/04/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/"/>
-    <id>http://example.com/2020/11/04/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/</id>
-    <published>2020-11-04T07:02:25.000Z</published>
-    <updated>2020-11-04T10:48:33.789Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>参考博客：</strong><a href="https://blog.csdn.net/a772304419/article/details/79365744">https://blog.csdn.net/a772304419/article/details/79365744</a></p><h4 id="1-关闭所有服务"><a href="#1-关闭所有服务" class="headerlink" title="1.关闭所有服务"></a>1.关闭所有服务</h4><p>​    打开cmd，运行services.msc,关闭oracle所有的服务。</p><p>​    <img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184732375.png" alt="image-20201104184732375"></p><h4 id="2-打开注册表：打开cmd-运行regedit。"><a href="#2-打开注册表：打开cmd-运行regedit。" class="headerlink" title="2.打开注册表：打开cmd,运行regedit。"></a>2.打开注册表：打开cmd,运行regedit。</h4><ol><li><p>删除 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ 该路径下所有以oracle开始的服务名称，这个键是标识Oracle在windows下注册的各种服务。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184741757.png" alt="image-20201104184741757"></p></li><li><p>删除：</p><p> HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE</p><p> 删除该oracle目录，该目录下注册着Oracle数据库的软件安装信息。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184749535.png" alt="image-20201104184749535"></p></li><li><p>删除注册的oracle事件日志：</p><p>路径：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application</p><p>删除注册表的以oracle开头的所有项目。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184758069.png" alt="image-20201104184758069"></p></li></ol><h4 id="3-删除环境变量"><a href="#3-删除环境变量" class="headerlink" title="3.删除环境变量"></a>3.删除环境变量</h4><p> 鼠标右键右单击”我的电脑–&gt;属性–&gt;高级–&gt;环境变量–&gt;PATH 变量。</p><p>  删除Oracle在该值中的内容。注意:path中记录着一堆操作系统的目录，在windows中各个目录之间使用分号（;）隔开的，删除时注意。</p><p><img src="C:\Users\dell\AppData\Roaming\Typora\typora-user-images\image-20201104184807975.png" alt="image-20201104184807975"></p><h4 id="4-重启操作系统"><a href="#4-重启操作系统" class="headerlink" title="4. 重启操作系统"></a>4. 重启操作系统</h4><h4 id="5-删除Oracle-Home下的所有数据。"><a href="#5-删除Oracle-Home下的所有数据。" class="headerlink" title="5.删除Oracle_Home下的所有数据。"></a>5.删除Oracle_Home下的所有数据。</h4><p>   （Oracle_Home指Oracle程序的安装目录）</p><h4 id="6-删除C-Program-Files下oracle目录。"><a href="#6-删除C-Program-Files下oracle目录。" class="headerlink" title="6.删除C:\Program Files下oracle目录。"></a>6.删除C:\Program Files下oracle目录。</h4><p>（该目录视Oracle安装所在路径而定）</p><h4 id="7-删除开始菜单下oracle项"><a href="#7-删除开始菜单下oracle项" class="headerlink" title="7.删除开始菜单下oracle项"></a>7.删除开始菜单下oracle项</h4><p>如：C:\Documents and Settings\All Users\「开始」菜单\程序\Oracle - Ora10g</p><p>   不同的安装这个目录稍有不同。</p><p>   如果不删除开始菜单下的Oracle相关菜单目录，没关系，这个不影响再次安装Oracle.当再次安装Oracle时，该菜单会被替换。</p><p>至此，Windows平台下Oracle就彻底卸载了。 </p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;strong&gt;参考博客：&lt;/strong&gt;&lt;a href=&quot;https://blog.csdn.net/a772304419/article/details/79365744&quot;&gt;https://blog.csdn.net/a772304419/article/detail</summary>
       
     
     
