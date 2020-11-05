@@ -9,21 +9,49 @@
   </url>
   
   <url>
+    <loc>http://example.com/2020/11/04/Oracle%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
+    
+    <lastmod>2020-11-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://example.com/2020/11/04/Oracle11g%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
     
-    <lastmod>2020-11-04</lastmod>
+    <lastmod>2020-11-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/11/04/Linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2020-11-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/11/04/Linux/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    
+    <lastmod>2020-11-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/11/04/Linux/Linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/</loc>
+    
+    <lastmod>2020-11-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://example.com/2020/11/04/Linux/linux%E4%B8%8B%E9%83%A8%E7%BD%B2nginx/</loc>
+    
+    <lastmod>2020-11-05</lastmod>
     
   </url>
   
   <url>
     <loc>http://example.com/2020/11/04/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2020-11-04</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://example.com/2020/11/04/Oracle%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</loc>
     
     <lastmod>2020-11-04</lastmod>
     
@@ -95,6 +123,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/tags/git/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/tags/PicGo/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
@@ -108,17 +143,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://example.com/tags/git/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
-    <loc>http://example.com/categories/Oracle/</loc>
+    <loc>http://example.com/categories/%EF%BC%8D-%E6%95%B0%E6%8D%AE%E5%BA%93-%EF%BC%8D-Oracle/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -132,6 +160,13 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
@@ -139,7 +174,21 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/Linux/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/IDEA/</loc>
+    <lastmod>2020-11-05</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/git/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -154,20 +203,6 @@
   
   <url>
     <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/hexo/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2020-11-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/git/</loc>
     <lastmod>2020-11-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
