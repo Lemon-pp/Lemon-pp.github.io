@@ -123,14 +123,21 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/PicGo/</loc>
+    <loc>http://example.com/tags/hexo/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/hexo/</loc>
+    <loc>http://example.com/tags/SpringMVC/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/PicGo/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -157,13 +164,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>http://example.com/tags/SpringMVC/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
@@ -175,6 +175,13 @@
   
   <url>
     <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/SSM/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -195,7 +202,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
+    <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/hexo/</loc>
+    <lastmod>2020-12-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/SSM/SpringMVC/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -203,20 +217,6 @@
   
   <url>
     <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/PicGo/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/SSM/</loc>
-    <lastmod>2020-12-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/categories/%E5%B7%A5%E5%85%B7/hexo/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -237,14 +237,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/git/</loc>
+    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/SSM/SpringMVC/</loc>
+    <loc>http://example.com/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/git/</loc>
     <lastmod>2020-12-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
