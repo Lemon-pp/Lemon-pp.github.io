@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Serendipity - 不期而遇的美好</title><meta name="keywords" content="Java、记录"><meta name="author" content="lemon"><meta name="copyright" content="lemon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="记录自己成长的地方，迎接不期而遇的美好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Serendipity">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Serendipity">
+<meta property="og:description" content="记录自己成长的地方，迎接不期而遇的美好">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg">
+<meta property="article:author" content="lemon">
+<meta property="article:tag" content="Java、记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-12-17 16:01:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Serendipity" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serendipity</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Serendipity</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://lemon-pp.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/" title="Oracle彻底卸载干净教程">     <img class="post_bg" src="https://images.unsplash.com/photo-1604142056225-1feabdac3af1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Oracle彻底卸载干净教程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/%E6%95%B0%E6%8D%AE%E5%BA%93/Oracle%E5%BD%BB%E5%BA%95%E5%8D%B8%E8%BD%BD%E5%B9%B2%E5%87%80%E6%95%99%E7%A8%8B/" title="Oracle彻底卸载干净教程">Oracle彻底卸载干净教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T02:19:06.462Z" title="更新于 2020-11-05 10:19:06">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/Oracle/">Oracle</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/oracle/">oracle</a></span></div><div class="content">参考博客：https://blog.csdn.net/a772304419/article/details/79365744
+关闭所有服务​    打开cmd，运行services.msc,关闭oracle所有的服务。
+​    
+打开注册表：打开cmd,运行regedit。
+删除 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ 该路径下所有以oracle开始的服务名称，这个键是标识Oracle在windows下注册的各种服务。
+
+
+删除：
+ HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE
+ 删除该oracle目录，该目录下注册着Oracle数据库的软件安装信息。
+
+
+
+删除注册的oracle事件日志：
+路径：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application
+删除注册表的以oracle开头的所有项目。
+
+
+
+删除环境变量 鼠标右键右单击”我的电脑–&gt;属性–&gt;高级–&gt;环境变量–&gt;PATH ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/04/%E5%B7%A5%E5%85%B7/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" title="hexo+github搭建个人博客教程">     <img class="post_bg" src="https://images.unsplash.com/photo-1604443463127-6c6dc4dcf46f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo+github搭建个人博客教程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/%E5%B7%A5%E5%85%B7/hexo+github%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" title="hexo+github搭建个人博客教程">hexo+github搭建个人博客教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T02:21:28.577Z" title="更新于 2020-11-05 10:21:28">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/hexo/">hexo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/hexo/">hexo</a></span></div><div class="content">1、github创建个人仓库创建仓库
+
+
+访问https://lemon-pp.github.io/，就可以看到自己的个人GitHub学习博客了。
+2、配置SSH key参考博客：https://zhuanlan.zhihu.com/p/26625249
+3、准备环境需要环境：
+123node.jsnpmgit
+
+
+
+4、安装hexo123456789101112## 下载安装hexonpm install -g hexo-cli ## 初始化我们的博客hexo init blog## 生成页面hexo g## 启动本地服务器,访问http://localhost:4000查看hexo s
+
+
+
+5、部署到GitHub找到_config.yml
+修改deploy
+1234deploy:  type: git  repository: https://github.com/Lemon-pp/Lemon-pp.github.io.git  branch: master
+
+访问https://lemon-pp.github.io/即可
+建议上传到github，用git管理。
+6、博客个性化具 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/04/%E5%B7%A5%E5%85%B7/Typora%E9%80%9A%E8%BF%87PicGo%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="Typora通过PicGo实现图片上传">     <img class="post_bg" src="https://images.unsplash.com/photo-1604065318249-095f3919f957?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Typora通过PicGo实现图片上传"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/%E5%B7%A5%E5%85%B7/Typora%E9%80%9A%E8%BF%87PicGo%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" title="Typora通过PicGo实现图片上传">Typora通过PicGo实现图片上传</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-04T10:34:55.116Z" title="更新于 2020-11-04 18:34:55">2020-11-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/">工具</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E5%B7%A5%E5%85%B7/PicGo/">PicGo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/PicGo/">PicGo</a></span></div><div class="content">Typora通过PicGo实现图片上传前提工具1.Typora：百度或者谷歌下载，建议最新版。因为功能是最新版才有。
+2.PicGo：开源的图片管理工具，可以自己上传图片到各种图床。
+3.SM.MS: 免费图床。我选择这个图床的原因主要是免费、功能够用。
+功能：
+实现自动上传图片到图床、保存 Markdown 格式的链接，直接粘贴插入，非常轻松，减少了复杂的工作。
+搭建步骤1.下载新版Typora
+2.下载PicGo.
+​    下载地址：https://picgo.github.io/PicGo-Doc/zh/guide/#%E7%89%B9%E8%89%B2%E5%8A%9F%E8%83%BD
+windows版本：
+
+3.注册SM.MS
+先注册，然后在API Token中获取token
+
+4.配置PicGo
+1.插件设置
+​    下载smms-user插件，在设置中配置sm的token。
+2.上传区选择图片上传-SM.MS图床。
+5.Typroa设置
+
+根据1-2-3-4，完成设置。
+测试1.点击验证图片上传选项，查看是否成功。
+2.截图复制到typroa中，查看是否自动上传，由 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/04/Linux/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="虚拟机问题">     <img class="post_bg" src="https://images.unsplash.com/photo-1604367463733-dff5a4517e9d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="虚拟机问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/Linux/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" title="虚拟机问题">虚拟机问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T02:22:15.744Z" title="更新于 2020-11-05 10:22:15">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">1.虚拟机无法访问外部网络12345## 解决办法1.查看ip2.如果可以看到IP，将网络设置为nat模式，然后重启网络systemctl restart network3.ping www.baidu.com
+
+2.虚拟机查看不到自己IP12345chkconfig network offchkconfig network onsystemctl stop NetworkManagersystemctl start NetworkManager//上面两句可以合并成 systemctl restart NetworkManager
+
+3、主机和虚拟机互相ping不通1234567891011121314151617181920212223242526272829303132## 1.选择nat模式连接## 2.修改网络配置文件cd /etc/sysconfig/network-scripts/vi ifcfg-ens33 TYPE=&quot;Ethernet&quot;BOOTPROTO=&quot;static&quot;DEFROUTE=&quot;yes&quot;PEERD ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/04/Linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="常用命令">     <img class="post_bg" src="https://images.unsplash.com/photo-1604142056225-1feabdac3af1?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/Linux/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="常用命令">常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T02:22:15.779Z" title="更新于 2020-11-05 10:22:15">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">Oracle命令1drop user emp cascade;
+
+docker 安装nacos1234567891011## 安装nacos使用docker 安装最新版docker pull nacos/nacos-server## 创建文件/opt/nacos/init.d/custom.properties并复制如下内容management.endpoints.web.exposure.include=*## 启动docker run -d -p 8848:8848 -e MODE=standalone -v /opt/nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties -v /opt/nacos/logs:/home/nacos/logs --restart always --name nacos nacos/nacos-server##创建数据库 nacos再添加sql
+
+redis中的常用命令123456789101112131415161718192021222324252627282930 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/04/Linux/linux%E4%B8%8B%E9%83%A8%E7%BD%B2nginx/" title="Linux下部署nginx">     <img class="post_bg" src="https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux下部署nginx"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/Linux/linux%E4%B8%8B%E9%83%A8%E7%BD%B2nginx/" title="Linux下部署nginx">Linux下部署nginx</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T02:22:15.652Z" title="更新于 2020-11-05 10:22:15">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">1、安装make1yum -y install gcc automake autoconf libtool make
+
+
+
+2、安装g++1yum install gcc gcc-c++
+
+
+
+3、安装库1234567891011121314151617181920212223242526272829303132## 安装PCRE库tar -zxvf pcre-8.43.tar.gzcd pcre-8.43./configuremakemake install## 安装zlib库wget http://zlib.net/zlib-1.2.11.tar.gztar -zxvf zlib-1.2.11.tar.gzcd zlib-1.2.11./configuremakemake install## 安装sslcd /usr/local/srcwget https://www.openssl.org/source/openssl-1.0.2s.tar.gztar -zxvf openssl-1.0.2s.tar.gz## 安装nginxcd /usr/local/srcwget http: ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/11/04/Linux/Linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/" title="Linux下设置静态IP">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1576840004761&amp;di=f45253aa3e1ac8c8c184d302d03af728&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1208%2F15%2Fc0%2F12924355_1344999165555.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux下设置静态IP"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/Linux/Linux%E4%B8%8B%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/" title="Linux下设置静态IP">Linux下设置静态IP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-05T03:28:59.428Z" title="更新于 2020-11-05 11:28:59">2020-11-05</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/Linux/">Linux</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Linux/">Linux</a></span></div><div class="content">参考地址：https://blog.csdn.net/u014466635/article/details/80284792
+一、设置虚拟网络编辑器在菜单栏选择编辑→ 虚拟网络编辑器，打开虚拟网络编辑器对话框，选择Net网络连接方式，随意设置子网IP，点击NAT设置页面，查看子网掩码和网关，后面修改静态IP会用到。
+
+注：上面的“使用本地DHCP服务……”这一项是没有钩选的
+
+二、检查物理主机 网卡设置打开网络和共享中心→ 更改适配器设置→，在VMware Network Adapter VMnet8上单击右键，选择属性按钮打开属性对话框。  
+
+修改IP地址注意填写和第一步设置的一样
+
+三、进入虚拟机，设置固定IP地址。输入如下命令：vi /etc/sysconfig/network-scripts/ifcfg-eth33
+注：修改网络设置必须是root用户或是sudo 
+
+DEVICE=”eth0”BOOTPROTO=”static”HWADDR=”00:0C:29:F4:7E:C9”IPV6INIT=”yes”NM_CONTROLLED=”yes”ONBOOT=”yes”TYPE ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/11/04/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/git%E5%AD%A6%E4%B9%A0/" title="git命令">     <img class="post_bg" src="https://images.unsplash.com/photo-1604493858837-e785dfcb4fad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/11/04/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/git%E5%AD%A6%E4%B9%A0/" title="git命令">git命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-11-04T07:02:25.000Z" title="发表于 2020-11-04 15:02:25">2020-11-04</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-04T10:34:55.168Z" title="更新于 2020-11-04 18:34:55">2020-11-04</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/">版本管理工具</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/git/">git</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/git/">git</a></span></div><div class="content">1. git添加文件步骤：
+克隆仓库：git clone 仓库地址
+仓库初始化：git init
+添加文件到缓存区：git add 文件名  或者上传全部文件 git add .
+将文件提交到归档区：git commit -m ‘注释’
+添加仓库：git remote add origin 仓库地址，用origin来代替仓库地址。
+通过push提交到远程仓库：git push -u origin master
+
+2. 本地文件修改后： 1. 使用git status 查看状态
+ 2. 通过添加文件步骤，进行提交。
+3.文件提交回滚：
+通过git log查看版本号。
+git reset [opt] 版本号   进行回滚。默认opt参数是–mixed。
+–mixed  回滚缓冲区、归档区。
+–hard  回滚工作区、缓冲区、归档区。
+–soft  只回滚归档区
+
+
+再进行add、commit等操作。
+
+4.回滚错误还原：
+通过git reflog 查看版本号
+再通过git reset 版本号执行操作。
+
+5.创建分支查看当前分支：git branch -v
+创建分支并切换：git chec ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">lemon</div><div class="author-info__description">记录自己成长的地方，迎接不期而遇的美好</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://lemon-pp.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">有目标有计划</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/Redis/Redis/" title="无题"><img src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2020/12/17/Redis/Redis/" title="无题">无题</a><time datetime="2020-12-17T07:56:28.103Z" title="发表于 2020-12-17 15:56:28">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89--%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%92%8C%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" title="启动线程的正确和错误方式以及原理解析"><img src="https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="启动线程的正确和错误方式以及原理解析"/></a><div class="content"><a class="title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89--%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%92%8C%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" title="启动线程的正确和错误方式以及原理解析">启动线程的正确和错误方式以及原理解析</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="11.JSTL表达式.md"><img src="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="11.JSTL表达式.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="11.JSTL表达式.md">11.JSTL表达式.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/13.%E7%9B%91%E5%90%AC%E5%99%A8/" title="13.监听器.md"><img src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13.监听器.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/13.%E7%9B%91%E5%90%AC%E5%99%A8/" title="13.监听器.md">13.监听器.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/12.%E8%BF%87%E6%BB%A4%E5%99%A8/" title="12.过滤器.md"><img src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="12.过滤器.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/12.%E8%BF%87%E6%BB%A4%E5%99%A8/" title="12.过滤器.md">12.过滤器.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="card-content"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SSM/"><span class="card-category-list-name">SSM</span><span class="card-category-list-count">3</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SSM/SpringMVC/"><span class="card-category-list-name">SpringMVC</span><span class="card-category-list-count">3</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/"><span class="card-category-list-name">java</span><span class="card-category-list-count">16</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"><span class="card-category-list-name">并发编程</span><span class="card-category-list-count">16</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jsp/"><span class="card-category-list-name">jsp</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">2</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/PicGo/"><span class="card-category-list-name">PicGo</span><span class="card-category-list-count">1</span></a></li></ul>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/IDEA/" style="font-size: 1.1em; color: #999">IDEA</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91/" style="font-size: 1.4em; color: #99a5b6">Java并发</a> <a href="/tags/Linux/" style="font-size: 1.3em; color: #99a1ac">Linux</a> <a href="/tags/PicGo/" style="font-size: 1.1em; color: #999">PicGo</a> <a href="/tags/SpringMVC/" style="font-size: 1.2em; color: #999da3">SpringMVC</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/jsp/" style="font-size: 1.5em; color: #99a9bf">jsp</a> <a href="/tags/oracle/" style="font-size: 1.2em; color: #999da3">oracle</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">36</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">12</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-12-17T08:01:49.380Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">69k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-17T08:01:49.431Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By lemon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "有计划，有目标，Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '有'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

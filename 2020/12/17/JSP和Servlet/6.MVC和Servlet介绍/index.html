@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>6.MVC和Servlet介绍.md | Serendipity</title><meta name="keywords" content="jsp"><meta name="author" content="lemon"><meta name="copyright" content="lemon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="MVC和Servlet介绍1.MVC模式M：Model    ，模型  ：一个功能。用JavaBean实现。 V:View，视图： 用于展示、以及与用户交互。使用html  js  css jsp jquery等前端技术实现 C:Controller，控制器 ：接受请求，将请求跳转到模型进行处理；模型处理完毕后，再将处理的结果            返回给 请求处 。 可以用jsp实现，  但是一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="6.MVC和Servlet介绍.md">
+<meta property="og:url" content="http://example.com/2020/12/17/JSP%E5%92%8CServlet/6.MVC%E5%92%8CServlet%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:site_name" content="Serendipity">
+<meta property="og:description" content="MVC和Servlet介绍1.MVC模式M：Model    ，模型  ：一个功能。用JavaBean实现。 V:View，视图： 用于展示、以及与用户交互。使用html  js  css jsp jquery等前端技术实现 C:Controller，控制器 ：接受请求，将请求跳转到模型进行处理；模型处理完毕后，再将处理的结果            返回给 请求处 。 可以用jsp实现，  但是一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+<meta property="article:published_time" content="2020-12-17T07:02:25.000Z">
+<meta property="article:modified_time" content="2020-12-17T08:01:01.907Z">
+<meta property="article:author" content="lemon">
+<meta property="article:tag" content="jsp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/6.MVC%E5%92%8CServlet%E4%BB%8B%E7%BB%8D/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-12-17 16:01:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Serendipity" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MVC%E5%92%8CServlet%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">MVC和Servlet介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-MVC%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">1.MVC模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Servlet%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">2.Servlet介绍以及初步使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-servlet%E4%BC%A0%E9%80%92%E6%95%B0%E6%8D%AE%E5%88%B0JSP%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">4.servlet传递数据到JSP方法：</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1608128492618-74077a0f9d80?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serendipity</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">6.MVC和Servlet介绍.md</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T08:01:01.907Z" title="更新于 2020-12-17 16:01:01">2020-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jsp/">jsp</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="MVC和Servlet介绍"><a href="#MVC和Servlet介绍" class="headerlink" title="MVC和Servlet介绍"></a>MVC和Servlet介绍</h2><h3 id="1-MVC模式"><a href="#1-MVC模式" class="headerlink" title="1.MVC模式"></a>1.MVC模式</h3><p>M：Model    ，模型  ：一个功能。用JavaBean实现。</p>
+<p>V:View，视图： 用于展示、以及与用户交互。使用html  js  css jsp jquery等前端技术实现</p>
+<p>C:Controller，控制器 ：接受请求，将请求跳转到模型进行处理；模型处理完毕后，再将处理的结果<br>            返回给 请求处 。 可以用jsp实现，  但是一般建议使用 Servlet实现控制器。</p>
+<p>Jsp-&gt;Java(Servlet)-&gt;JSP</p>
+<p><img src="E:\待办\Java-Butterfly-Transform\学习笔记\Servlet和JSP\assets\1589352618512.png" alt="1589352618512"></p>
+<p><img src="E:\待办\Java-Butterfly-Transform\学习笔记\Servlet和JSP\assets\1589352645160.png" alt="1589352645160"></p>
+<h3 id="2-Servlet介绍以及初步使用"><a href="#2-Servlet介绍以及初步使用" class="headerlink" title="2.Servlet介绍以及初步使用"></a>2.Servlet介绍以及初步使用</h3><p>Servlet：<br>Java类必须符合一定的 规范：<br>    a.必须继承  javax.servlet.http.HttpServlet<br>    b.重写其中的 doGet()或doPost()方法</p>
+<p> doGet()： 接受 并处理 所有get提交方式的请求<br> doPost()：接受 并处理 所有post提交方式的请求</p>
+<p>Servlet要想使用，必须配置<br>Serlvet2.5：web.xml<br>Servle3.0： @WebServlet</p>
+<p>Serlvet2.5：web.xml:</p>
+<p>项目的根目录：WebContent 、src</p>
+<p><a href="WelcomeServlet">所在的jsp是在 WebContent目录中，因此 发出的请求WelcomeServlet  是去请求项目的根目录。</p>
+<p>Servlet流程：<br>请求 -&gt;<url-pattern> -&gt; 根据<servlet-mapping>中的<servlet-name> 去匹配  <servlet> 中的<servlet-name>，然后寻找到<servlet-class>，求中将请求交由该<servlet-class>执行。</p>
+<p><img src="E:\待办\Java-Butterfly-Transform\学习笔记\Servlet和JSP\assets\1589352756607.png" alt="1589352756607"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Web.xml文件配置：</span><br><span class="line">&lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;WelcomeServlet（servlet名字，与Servlet-mapping中的servlet-name一致就行，没有其他要求）&lt;&#x2F;servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;lemon.WelcomeServlet（servlet的包路径）&lt;&#x2F;servlet-class&gt;</span><br><span class="line">    &lt;&#x2F;servlet&gt;</span><br><span class="line"></span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;WelcomeServlet（servlet名字，与Servlet中的servlet-name一致就行，没有其他要求）&lt;&#x2F;servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&#x2F;WelcomeServlet（相对路径）&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1.回顾纯手工方法创建第一个Servlet<br>步骤：<br>编写一个类，继承HttpServlet<br>重写doGet()、doPost()方法<br>编写web.xml 中的servlet映射关系</p>
+<p>2.借助于Eclipse快速生成Servlet<br>直接新建Servlet即可！（继承、重写、web.xml  可以借助Eclipse自动生成）</p>
+<p>servlet4.0是生成@WebServlet(name = “WelcomeServlet2”)注解，但是会报404，需要加上, urlPatterns = “/WelcomeServlet2”。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@WebServlet(name &#x3D; &quot;WelcomeServlet2&quot;, urlPatterns &#x3D; &quot;&#x2F;WelcomeServlet2&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>###　３.Servlet生命周期：5个阶段 </p>
+<p>加载<br>初始化： init()  ，该方法会在 Servlet被加载并实例化的以后 执行<br>服务  ：service() -&gt;doGet()  doPost<br>销毁  ：destroy()，  Servlet被系统回收时执行<br>卸载</p>
+<p>init():<br>    a.默认第一次访问 Servlet时会被执行 （只执行这一次）<br>    b.可以修改为 Tomcat启动时自动执行<br>        i.Servlet2.5：  web.xml<br>              <servlet><br>                …<br>                   <load-on-startup>1</load-on-startup><br>                </servlet><br>            其中的“1”代表第一个。<br>        ii.Servlet3.0<br>            在注解里加：@WebServlet( value=”/WelcomeServlet” ,<strong>loadOnStartup=1</strong>  )</p>
+<p>service() -&gt;doGet()  doPost ：调用几次，则执行几次<br>destroy()：关闭tomcat服务时，执行一次。</p>
+<p><img src="E:\待办\Java-Butterfly-Transform\学习笔记\Servlet和JSP\assets\1589359080910.png" alt="1589359080910"></p>
+<h3 id="4-servlet传递数据到JSP方法："><a href="#4-servlet传递数据到JSP方法：" class="headerlink" title="4.servlet传递数据到JSP方法："></a>4.servlet传递数据到JSP方法：</h3><p>1.传递字段或者对象：</p>
+<p>在servlet中：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">字段：</span><br><span class="line">request.setAttribute(<span class="string">&quot;name&quot;</span>,name);</span><br><span class="line">对象:</span><br><span class="line">UserInfo u = <span class="keyword">new</span> UserInfo（）；</span><br><span class="line">request.setAttribute(<span class="string">&quot;u&quot;</span>,u);</span><br></pre></td></tr></table></figure>
+
+<p>在jsp中：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">request.getAttribute(<span class="string">&quot;name&quot;</span>);</span><br><span class="line"></span><br><span class="line">&lt;%UserInfo u = request.getAttribute(<span class="string">&quot;u&quot;</span>);%&gt;</span><br><span class="line">页面显示它的属性的话用表达答式 ,姓名&lt;%=u.getName()%&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>2.传递集合：比如list</p>
+<p>两种方法：</p>
+<p>1.jsp表达式</p>
+<p>2.jstl</p>
+<p>在servlet中：</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(<span class="string">&quot;studentList&quot;</span>, studentList);</span><br><span class="line"><span class="comment">//也可以通过session、pageContext、application</span></span><br><span class="line"><span class="comment">//但是域范围越小越好，pageContext&lt;request&lt;session&lt;application,因此选择request。</span></span><br><span class="line"><span class="comment">//因为request域中有数据，因此需要通过请求转发来跳转（重定向会丢失数据）           request.getRequestDispatcher(&quot;studentShow.jsp&quot;).forward(request,response);</span></span><br></pre></td></tr></table></figure>
+
+<p>在JSP中：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">第一种：jsp表达式</span><br><span class="line">		&lt;%</span><br><span class="line">            ArrayList&lt;Student&gt; studentList = (ArrayList&lt;Student&gt;) request.getAttribute(<span class="string">&quot;studentList&quot;</span>);</span><br><span class="line">            <span class="keyword">for</span> (Student student : studentList)&#123;</span><br><span class="line">        %&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=student.getSno() %&gt;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=student.getSname() %&gt;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=student.getSage() %&gt;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;&lt;%=student.getSaddr() %&gt;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;%</span><br><span class="line">            &#125;</span><br><span class="line">     	%&gt;</span><br><span class="line"></span><br><span class="line">第二种：jstl</span><br><span class="line">导jstl需要的两个jar包到lib文件夹下</span><br><span class="line">导标签：</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span> %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">        ArrayList studentList = (ArrayList) request.getAttribute(<span class="string">&quot;studentList&quot;</span>);</span><br><span class="line"></span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;table <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;table&quot;</span>&gt;</span><br><span class="line">        &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th&gt;学号&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">            &lt;th&gt;地址&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;/thead&gt;</span><br><span class="line">        &lt;tbody&gt;</span><br><span class="line">        &lt;c:forEach items=<span class="string">&quot;$&#123;studentList&#125;&quot;</span> <span class="keyword">var</span>=<span class="string">&quot;student&quot;</span>&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;td&gt;$&#123;student.sno&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;student.sname&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;student.sage&#125;&lt;/td&gt;</span><br><span class="line">                &lt;td&gt;$&#123;student.saddr&#125;&lt;/td&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/c:forEach&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/tbody&gt;</span><br><span class="line">    &lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">lemon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/6.MVC%E5%92%8CServlet%E4%BB%8B%E7%BB%8D/">http://example.com/2020/12/17/JSP和Servlet/6.MVC和Servlet介绍/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Serendipity</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/jsp/">jsp</a></div><div class="post_share"><div class="social-share" data-image="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/17/JSP%E5%92%8CServlet/5.Javabean/"><img class="prev-cover" src="https://images.unsplash.com/photo-1604287164424-00d54cb0bdf8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">5.Javabean.md</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/17/JSP%E5%92%8CServlet/8.%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84%E4%BC%98%E5%8C%96%EF%BC%88JDBC%E4%BC%98%E5%8C%96%EF%BC%89/"><img class="next-cover" src="https://images.unsplash.com/photo-1604065318249-095f3919f957?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">8.三层架构优化（JDBC优化）.md</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/12/17/JSP和Servlet/4.JDBC/" title="4.JDBC.md"><img class="cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">4.JDBC.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/1.JSP环境搭建和入门/" title="JSP环境搭建和入门"><img class="cover" src="https://images.unsplash.com/photo-1604436341160-be20b01ce352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">JSP环境搭建和入门</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/11.JSTL表达式/" title="11.JSTL表达式.md"><img class="cover" src="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">11.JSTL表达式.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/13.监听器/" title="13.监听器.md"><img class="cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">13.监听器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/12.过滤器/" title="12.过滤器.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">12.过滤器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/16.连接MySQL数据库url报错问题/" title="16.连接MySQL数据库url报错问题.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">16.连接MySQL数据库url报错问题.md</div></div></a></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By lemon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>11.JSTL表达式.md | Serendipity</title><meta name="keywords" content="jsp"><meta name="author" content="lemon"><meta name="copyright" content="lemon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="JSTL表达式需要引入2个jar ：jstl.jar   standard.jar引入tablib  :&lt;%@ taglib uri&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; prefix&#x3D;”c” %&gt;其中prefix&#x3D;”c” :前缀 核心标签库：  通用标签库、条件标签库  迭代标签库 a.通用标签库&lt;c:set&gt;赋值i:在某个作用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="11.JSTL表达式.md">
+<meta property="og:url" content="http://example.com/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Serendipity">
+<meta property="og:description" content="JSTL表达式需要引入2个jar ：jstl.jar   standard.jar引入tablib  :&lt;%@ taglib uri&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;jsp&#x2F;jstl&#x2F;core&quot; prefix&#x3D;”c” %&gt;其中prefix&#x3D;”c” :前缀 核心标签库：  通用标签库、条件标签库  迭代标签库 a.通用标签库&lt;c:set&gt;赋值i:在某个作用">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png">
+<meta property="article:published_time" content="2020-12-17T07:02:25.000Z">
+<meta property="article:modified_time" content="2020-12-17T08:01:02.008Z">
+<meta property="article:author" content="lemon">
+<meta property="article:tag" content="jsp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-12-17 16:01:02'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Serendipity" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">JSTL表达式</span></a></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1608128492618-74077a0f9d80?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serendipity</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">11.JSTL表达式.md</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T08:01:02.008Z" title="更新于 2020-12-17 16:01:02">2020-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jsp/">jsp</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">427</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="JSTL表达式"><a href="#JSTL表达式" class="headerlink" title="JSTL表达式"></a>JSTL表达式</h2><p>需要引入2个jar ：jstl.jar   standard.jar<br>引入tablib  :<br>&lt;%@ taglib uri=”<a target="_blank" rel="noopener" href="http://java.sun.com/jsp/jstl/core&quot;">http://java.sun.com/jsp/jstl/core&quot;</a> prefix=”c” %&gt;<br>其中prefix=”c” :前缀</p>
+<p>核心标签库：  通用标签库、条件标签库  迭代标签库</p>
+<p>a.通用标签库<br>&lt;c:set&gt;赋值<br>i:<br>在某个作用域之中（4个范围对象），给某个变量赋值<br>    &lt;%–<br>        request.setAttribute(“name”, “zhangsan”) ;<br>    –%&gt;<br>        &lt;c:set var=”name”    value=”zhangsan”   scope=”request”/&gt;<br>        ${requestScope.name }</p>
+<p>&lt;c:set var=”变量名”    value=”变量值”   scope=”4个范围对象的作用域”/&gt;</p>
+<p>ii:<br>给普通对象赋值<br>在某个作用域之中（4个范围对象），给某个对象的属性复制 （此种写法，不能指定scope属性）</p>
+<pre><code>    &lt;c:set target=&quot;$&#123;requestScope.student&#125;&quot; property=&quot;sname&quot;  value=&quot;zxs&quot; /&gt;</code></pre>
+<p>给map对象赋值<br>        &lt;c:set target=”${requestScope.countries}” property=”cn”  value=”中国” /&gt;</p>
+<p>&lt;c:set target=”对象” property=”对象的属性”  value=”赋值” /&gt;</p>
+<p>注意 &lt;c:set&gt;可以给不存在的变量赋值 （但不能给不存在的对象赋值）</p>
+<p>&lt;c:out&gt;  ：显示<br>true:&lt;c:out value=’<a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>‘ default=”当value为空的，显示的默认值” escapeXml=”true” /&gt;<br>false：    &lt;c:out value=’<a target="_blank" rel="noopener" href="https://www.baidu.com">百度</a>‘ escapeXml=”false” /&gt;</p>
+<p>&lt;c:remove &gt;：删除属性<br>&lt;c:remove var=”a” scope=”request”/&gt;</p>
+<p>选择：<br>if(boolean)<br>单重选择<br>&lt;c:if test=”” &gt;</p>
+<p>if else if… esle if… else  /switch</p>
+<p>&lt;c:choose&gt;<br>    &lt;c:when test=”…”&gt;   </c:when><br>    &lt;c:when test=”…”&gt;   </c:when><br>    &lt;c:when test=”…”&gt;   </c:when><br>    &lt;c:otherwise&gt;   </c:otherwise><br></c:choose></p>
+<p>在使用 test=”” 一定要注意后面是否有空格<br>例如：test=”${10&gt;2 }”   true<br>     test=”${10&gt;2 } “  非true</p>
+<p>循环（迭代标签库）<br>for(int i=0;i&lt;5;i++)<br>    &lt;c:forEach  var=”name” items=”${requestScope.names }” &gt;<br>        -${name }-<br>    </c:forEach></p>
+<p>for(String str:names)<br>    &lt;c:forEach  var=”student” items=”${requestScope.students }” &gt;<br>        ${student.sname }-${student.sno }</p>
+<pre><code>&lt;/c:forEach&gt;</code></pre>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">lemon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/">http://example.com/2020/12/17/JSP和Servlet/11.JSTL表达式/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Serendipity</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/jsp/">jsp</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89--%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%92%8C%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/"><img class="prev-cover" src="https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">启动线程的正确和错误方式以及原理解析</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/17/JSP%E5%92%8CServlet/13.%E7%9B%91%E5%90%AC%E5%99%A8/"><img class="next-cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">13.监听器.md</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/12/17/JSP和Servlet/5.Javabean/" title="5.Javabean.md"><img class="cover" src="https://images.unsplash.com/photo-1604287164424-00d54cb0bdf8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">5.Javabean.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/1.JSP环境搭建和入门/" title="JSP环境搭建和入门"><img class="cover" src="https://images.unsplash.com/photo-1604436341160-be20b01ce352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">JSP环境搭建和入门</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/13.监听器/" title="13.监听器.md"><img class="cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">13.监听器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/12.过滤器/" title="12.过滤器.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">12.过滤器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/16.连接MySQL数据库url报错问题/" title="16.连接MySQL数据库url报错问题.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">16.连接MySQL数据库url报错问题.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/2.IDEA创建JSP项目步骤/" title="2.IDEA创建JSP项目步骤.md"><img class="cover" src="https://images.unsplash.com/photo-1604367463733-dff5a4517e9d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">2.IDEA创建JSP项目步骤.md</div></div></a></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By lemon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

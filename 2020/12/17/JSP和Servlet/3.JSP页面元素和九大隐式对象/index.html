@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3.JSP页面元素和九大隐式对象.md | Serendipity</title><meta name="keywords" content="jsp"><meta name="author" content="lemon"><meta name="copyright" content="lemon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="JSP页面元素和九大隐式对象1.jsp页面元素1.脚本程序：&lt;%    局部变量、Java语句    %&gt; 2.JSP声明：&lt;%!          全局变量、方法定义                    %&gt; 3.JSP表达式：&lt;%&#x3D; 输出表达式    %&gt;     4.指令 1234567891011&lt;%@ page ... %&gt;   定义页面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3.JSP页面元素和九大隐式对象.md">
+<meta property="og:url" content="http://example.com/2020/12/17/JSP%E5%92%8CServlet/3.JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%92%8C%E4%B9%9D%E5%A4%A7%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="Serendipity">
+<meta property="og:description" content="JSP页面元素和九大隐式对象1.jsp页面元素1.脚本程序：&lt;%    局部变量、Java语句    %&gt; 2.JSP声明：&lt;%!          全局变量、方法定义                    %&gt; 3.JSP表达式：&lt;%&#x3D; 输出表达式    %&gt;     4.指令 1234567891011&lt;%@ page ... %&gt;   定义页面">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.unsplash.com/photo-1598004295293-8167b8649571?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
+<meta property="article:published_time" content="2020-12-17T07:02:25.000Z">
+<meta property="article:modified_time" content="2020-12-17T08:01:01.978Z">
+<meta property="article:author" content="lemon">
+<meta property="article:tag" content="jsp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1598004295293-8167b8649571?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/3.JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%92%8C%E4%B9%9D%E5%A4%A7%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-12-17 16:01:01'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Serendipity" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><div id="sidebar"><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%92%8C%E4%B9%9D%E5%A4%A7%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.</span> <span class="toc-text">JSP页面元素和九大隐式对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-jsp%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.</span> <span class="toc-text">1.jsp页面元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">2.小知识点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-jsp%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3.jsp九大内置对象</span></a></li></ol></li></ol></div></div></div><header class="post-bg" id="page-header" style="background-image: url(https://images.unsplash.com/photo-1608128492618-74077a0f9d80?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fA%3D%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serendipity</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">3.JSP页面元素和九大隐式对象.md</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T08:01:01.978Z" title="更新于 2020-12-17 16:01:01">2020-12-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/jsp/">jsp</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h2 id="JSP页面元素和九大隐式对象"><a href="#JSP页面元素和九大隐式对象" class="headerlink" title="JSP页面元素和九大隐式对象"></a>JSP页面元素和九大隐式对象</h2><h3 id="1-jsp页面元素"><a href="#1-jsp页面元素" class="headerlink" title="1.jsp页面元素"></a>1.jsp页面元素</h3><p>1.脚本程序：&lt;%    局部变量、Java语句    %&gt;</p>
+<p>2.JSP声明：&lt;%!          全局变量、方法定义                    %&gt;</p>
+<p>3.JSP表达式：&lt;%= 输出表达式    %&gt;    </p>
+<p>4.指令</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page ... %&gt;   定义页面的依赖属性，比如脚本语言、error页面、缓存需求等等</span><br><span class="line">    language:jsp页面使用的脚本语言</span><br><span class="line">    <span class="keyword">import</span>:导入类</span><br><span class="line">    pageEncoding:jsp文件自身编码  jsp -&gt;java</span><br><span class="line">    contentType:浏览器解析jsp的编码</span><br><span class="line">    &lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span></span><br><span class="line">    pageEncoding=<span class="string">&quot;UTF-8&quot;</span>  <span class="keyword">import</span>=<span class="string">&quot;java.util.Date&quot;</span> %&gt;</span><br><span class="line">    </span><br><span class="line">&lt;%@ include ... %&gt;      包含其他文件</span><br><span class="line"></span><br><span class="line">&lt;%@ taglib ... %&gt;       引入标签库的定义，可以是自定义标签</span><br></pre></td></tr></table></figure>
+
+<p>5.注释</p>
+<p>​    html注释<!-- -->  ,可以被客户 通过浏览器查看源码 所观察到<br>​    java注释//     /<em>…</em>/<br>​    jsp注释&lt;%– –%&gt;</p>
+<h3 id="2-小知识点"><a href="#2-小知识点" class="headerlink" title="2.小知识点"></a>2.小知识点</h3><p>1.out.println不能回车，需要＋</br>，out.print() 、&lt;%= %&gt;可以直接解析html代码。</p>
+<p>2.修改web.xml、配置文件、Java  需要重启tomcat服务</p>
+<p>​    修改jsp、html、css、js，不需要重启</p>
+<p>3.并不是 任何的内部跳转都能访问WEB-INF；原因是 跳转有2种方式：请求转发 、重定向</p>
+<p>4.如果在jsp中写request等对象的方法时，没有提示且变红，需要在project Structure–modules–dependencies–+号–libraries–添加tomcat。</p>
+<p>5.get提交方式:  method=”get” 和 地址栏 、超链接(<a href="xx">)请求方式 默认都属于get提交方式</p>
+<p>6.get与post请求方式的区别：<br>    a.   get方式 在地址栏显示 请求信息  (但是地址栏能够容纳的 信息有限，4-5KB；如果请求数据存在大文件，图片等  会出现地址栏无法容纳全部的数据而出错) ；post不会显示<br>    b.   文件上传操作，必须是post<br>推荐使用post</p>
+<p>7.统一请求的编码 request<br>get方式请求 如果出现乱码，解决：<br>    a.统一每一个变量的 编码 （不推荐）<br>        new String(  旧编码，新编码);<br>        name = new String(name.getBytes(“iso-8859-1”),”utf-8”);</p>
+<p>​    b. 修改server.xml ，一次性的 更改tomcat默认get提交方式的编码 （utf-8）<br>​    建议 使用tomcat时， 首先在server.xml中 统一get方式的编码.. URIEncoding=”UTF-8”</p>
+<p>post方式请求：<br>    request.setCharacterEncoding(“utf-8”) ;</p>
+<h3 id="3-jsp九大内置对象"><a href="#3-jsp九大内置对象" class="headerlink" title="3.jsp九大内置对象"></a>3.jsp九大内置对象</h3><p>1.out：输出对象，向客户端输出内容。<br>2.request：请求对象；存储“客户端向服务端发送的请求信息”。<br>request对象的常见方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">getParameter</span><span class="params">(String name)</span> :根据请求的字段名key （input标签的name属性值） ，返回字段值value （input标签的value属性值）</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">String[] <span class="title">getParameterValues</span><span class="params">(String name)</span>: 根据请求的字段名key ，返回多个字段值value  （checkbox）</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setCharacterEncoding</span><span class="params">(<span class="string">&quot;编码格式utf-8&quot;</span>)</span> ：设置post方式的请求编码  （tomcat7以前默认iso-8859-1，tomcat8以后改为了utf-8）</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">getRequestDispatcher</span><span class="params">(<span class="string">&quot;b.jsp&quot;</span>)</span>.<span class="title">forward</span><span class="params">(request,response)</span> </span>;  ：请求转发 的方式跳转页面   A - &gt; B</span><br><span class="line"></span><br><span class="line"><span class="function">ServletContext <span class="title">getServerContext</span><span class="params">()</span>:获取项目的ServletContext对象</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+
+<p>示例：注册、显示</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;show.jsp&quot;</span> method=<span class="string">&quot;get&quot;</span>&gt;</span><br><span class="line">        用户名：&lt;input type=&quot;text&quot; name=&quot;uname&quot;&gt;&lt;/br&gt;</span><br><span class="line">        密码：&lt;input type=&quot;password&quot; name=&quot;upassword&quot;&gt;&lt;/br&gt;</span><br><span class="line">        年龄：&lt;input type=&quot;text&quot; name=&quot;uage&quot;&gt;&lt;/br&gt;</span><br><span class="line">        爱好：&lt;/br&gt;</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;uhobbies&quot;</span> value=<span class="string">&quot;篮球&quot;</span>&gt;篮球</span><br><span class="line">            &lt;input type=<span class="string">&quot;checkbox&quot;</span> name=<span class="string">&quot;uhobbies&quot;</span> value=<span class="string">&quot;足球&quot;</span>&gt;足球</span><br><span class="line">            &lt;input type=&quot;checkbox&quot; name=&quot;uhobbies&quot; value=&quot;台球&quot;&gt;台球&lt;/br&gt;</span><br><span class="line">            &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;注册&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        String uname = request.getParameter(<span class="string">&quot;uname&quot;</span>);</span><br><span class="line">        String upassword = request.getParameter(<span class="string">&quot;upassword&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> uage = Integer.parseInt(request.getParameter(<span class="string">&quot;uage&quot;</span>));</span><br><span class="line">        String[] uhobbies = request.getParameterValues(<span class="string">&quot;uhobbies&quot;</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    注册成功！&lt;/br&gt;</span><br><span class="line">    信息显示：&lt;/br&gt;</span><br><span class="line">    姓名：&lt;%=uname %&gt;&lt;/br&gt;</span><br><span class="line">    密码：&lt;%=upassword %&gt;&lt;/br&gt;</span><br><span class="line">    年龄：&lt;%=uage %&gt;&lt;/br&gt;</span><br><span class="line">    爱好：&lt;/br&gt;&lt;%</span><br><span class="line">        <span class="keyword">if</span> (uhobbies != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(String uhobbie : uhobbies)&#123;</span><br><span class="line">                out.print(uhobbie+<span class="string">&quot;&amp;nbsp&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p>3.response：响应对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">提供的方法：</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addCookie</span><span class="params">( Cookie cookie )</span></span>; 服务端向客户端增加cookie对象</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sendRedirect</span><span class="params">(String location )</span> <span class="keyword">throws</span> IOException</span>; :页面跳转的一种方式（重定向）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setContetType</span><span class="params">(String type)</span>:设置服务端响应的编码（设置服务端的contentType类型）</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：登陆</p>
+<p>login.jsp  -&gt; check.jsp  -&gt;success.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;check.jsp&quot;</span> method=<span class="string">&quot;post&quot;</span>&gt;</span><br><span class="line">        用户登录：&lt;/br&gt;</span><br><span class="line">        用户名：&lt;input type=&quot;text&quot; name=&quot;uname&quot;&gt;&lt;/br&gt;</span><br><span class="line">        密码：&lt;input type=&quot;password&quot; name=&quot;upassword&quot;&gt;&lt;/br&gt;</span><br><span class="line">        &lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;登录&quot;</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">        request.setCharacterEncoding(<span class="string">&quot;utf-8&quot;</span>);</span><br><span class="line">        String uname = request.getParameter(<span class="string">&quot;uname&quot;</span>);</span><br><span class="line">        String upassword = request.getParameter(<span class="string">&quot;upassword&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (uname.equals(<span class="string">&quot;zs&quot;</span>)  &amp;&amp; upassword.equals(<span class="string">&quot;123&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">//response.sendRedirect(&quot;success.jsp&quot;);</span></span><br><span class="line">            request.getRequestDispatcher(<span class="string">&quot;success.jsp&quot;</span>).forward(request, response);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            out.print(<span class="string">&quot;用户名或密码有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">登录成功！&lt;/br&gt;</span><br><span class="line">    欢迎：</span><br><span class="line">    &lt;%</span><br><span class="line">        String uname = request.getParameter(<span class="string">&quot;uname&quot;</span>);</span><br><span class="line">        out.print(uname);</span><br><span class="line">    %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<pre><code>                   请求转发                  重定向</code></pre>
+<p>地址栏是否改变        不变(check.jsp)        改变(success.jsp)</p>
+<p>是否保留第一次           保留                           不保留        –4种范围对象<br>请求时的数据</p>
+<p>请求的次数                      1                                  2</p>
+<p>跳转发生的位置          服务端             客户端发出的第二次跳转</p>
+<p>转发和重定向的跳转图：</p>
+<p><img src="E:\待办\Java-Butterfly-Transform\学习笔记\Servlet和JSP\assets\1588901345688.png" alt="1588901345688">4</p>
+<p>4.session(服务端)<br>Cookie（客户端，不是内置对象）:Cookie是由 服务端生成的 ，再发送给客户端保存。<br>相当于 本地缓存的作用： 客户端(hello.mp4,zs/abc)-&gt;服务端(hello.mp4；zs/abc)<br>作用：提高访问服务端的效率，但是安全性较差。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Cookie：	name=value   </span><br><span class="line">javax.servlet.http.Cookie</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Cookie</span><span class="params">(String name,String value)</span></span></span><br><span class="line"><span class="function">String <span class="title">getName</span><span class="params">()</span>：获取name</span></span><br><span class="line"><span class="function">String <span class="title">getValue</span><span class="params">()</span>:获取value</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaxAge</span><span class="params">(<span class="keyword">int</span> expiry)</span></span>;最大有效期 （秒）</span><br><span class="line"></span><br><span class="line">服务端准备Cookie：</span><br><span class="line">	response.addCookie(Cookie cookie)</span><br><span class="line">页面跳转（转发，重定向）</span><br><span class="line">客户端获取cookie:  </span><br><span class="line">	request.getCookies();</span><br></pre></td></tr></table></figure>
+
+<p>a.服务端增加cookie :response对象；客户端获取对象：request对象<br>b.不能直接获取某一个单独对象，只能一次性将 全部的cookie拿到</p>
+<p>通过F12可以发现  除了自己设置的Cookie对象外，还有一个name为 JSESSIONID的cookie</p>
+<p>建议 cookie只保存  英文数字，否则需要进行编码、解码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">实践：使用Cookie实现  记住用户名  功能</span><br></pre></td></tr></table></figure>
+
+
+
+<p>session机制：</p>
+<p>客户端第一次请求服务端时，（jsessionid-sessionid）服务端会产生一个session对象（用于保存该客户的信息）；<br>并且每个session对象 都会有一个唯一的 sessionId( 用于区分其他session);<br>服务端由会 产生一个cookie，并且 该cookie的name=JSESSIONID ,value=服务端sessionId的值；<br>然后 服务端会在 响应客户端的同时 将该cookie发送给客户端，至此 客户端就有了 一个cookie(JSESSIONID)；<br>因此，客户端的cookie就可以和服务端的session一一对应（JSESSIONID - sessionID）</p>
+<p>客户端第二/n次请求服务端时:服务端会先用客户端cookie种的JSESSIONID  去服务端的session中匹配sessionid,如果匹配成功（cookie  jsessionid和sesion sessionid），说明此用户 不是第一次访问,无需登录；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">session方法：</span><br><span class="line"><span class="function">String <span class="title">getId</span><span class="params">()</span> :获取sessionId  </span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isNew</span><span class="params">()</span> :判断是否是 新用户（第一次访问）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">invalidate</span><span class="params">()</span>:使session失效  （退出登录、注销）</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setAttribute</span><span class="params">()</span></span></span><br><span class="line"><span class="function">Object <span class="title">getAttribute</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setMaxInactiveInterval</span><span class="params">(秒)</span> ：设置最大有效 非活动时间 </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getMaxInactiveInterval</span><span class="params">()</span>:获取最大有效 非活动时间 </span></span><br></pre></td></tr></table></figure>
+
+<p>示例：<br>登录</p>
+<p>客户端在第一次请求服务端时，如果服务端发现 此请求没有 JSESSIONID,则会创建一个 name=JSESIONID的cookie  并返回给客户端</p>
+<p>Cookie：<br>a.不是内对对象，要使用必须new<br>b.但是，服务端会 自动生成一个(服务端自动new一个cookie) name=JSESIONID的cookie  并返回给客户端</p>
+<p>cookie和session的区别：<br>        session        cookie<br>保存的位置    服务端        客户端<br>安全性        较安全        较不安全<br>保存的内容    Object        String    </p>
+<p>5.appliation 全局对象<br>String getContextPath()    虚拟路径<br>String getRealPath(String name): 绝对路径（虚拟路径 相对的绝对路径）</p>
+<p>6.pageContext   JSP页面容器</p>
+<p>7.config   配置对象（服务器配置信息）</p>
+<p>8.page  当前JSP页面对象</p>
+<p>9.exception   异常对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">以上4个对象共有的方法：</span><br><span class="line">Object getAttribute(String name):根据属性名，或者属性值</span><br><span class="line">void setAttribute(String name,Object obj) :设置属性值（新增，修改）</span><br><span class="line">	setAttribute(&quot;a&quot;,&quot;b&quot;) ;&#x2F;&#x2F;如果a对象之前不存在，则新建一个a对象 ；</span><br><span class="line">				 如果a之前已经存在，则将a的值改为b</span><br><span class="line">void removeAttribute(String name)：根据属性名，删除对象</span><br></pre></td></tr></table></figure>
+
+<p>a.<br>pageContext 当前页面有效 (页面跳转后无效)</p>
+<p>b.<br>request   同一次请求有效；其他请求无效 （请求转发后有效；重定向后无效）</p>
+<p>c.<br>session  同一次会话有效  （无论怎么跳转，都有效；关闭/切换浏览器后无效 ； 从 登陆-&gt;退出 之间 全部有效）</p>
+<p>d.<br>application<br>    全局变量；整个项目运行期间 都有效 (切换浏览器 仍然有效)；关闭服务、其他项目 无效</p>
+<p>-&gt;多个项目共享、重启后仍然有效 ：JNDI</p>
+<p>1.以上的4个范围对象，通过 setAttribute()复制，通过getAttribute()取值；<br>2.以上范围对象，尽量使用最小的范围。因为 对象的范围越大，造成的性能损耗越大。</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">lemon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2020/12/17/JSP%E5%92%8CServlet/3.JSP%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0%E5%92%8C%E4%B9%9D%E5%A4%A7%E9%9A%90%E5%BC%8F%E5%AF%B9%E8%B1%A1/">http://example.com/2020/12/17/JSP和Servlet/3.JSP页面元素和九大隐式对象/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Serendipity</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/jsp/">jsp</a></div><div class="post_share"><div class="social-share" data-image="https://images.unsplash.com/photo-1598004295293-8167b8649571?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/17/JSP%E5%92%8CServlet/2.IDEA%E5%88%9B%E5%BB%BAJSP%E9%A1%B9%E7%9B%AE%E6%AD%A5%E9%AA%A4/"><img class="prev-cover" src="https://images.unsplash.com/photo-1604367463733-dff5a4517e9d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2.IDEA创建JSP项目步骤.md</div></div></a></div><div class="next-post pull-right"><a href="/2020/12/17/JSP%E5%92%8CServlet/4.JDBC/"><img class="next-cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">4.JDBC.md</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2020/12/17/JSP和Servlet/5.Javabean/" title="5.Javabean.md"><img class="cover" src="https://images.unsplash.com/photo-1604287164424-00d54cb0bdf8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">5.Javabean.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/1.JSP环境搭建和入门/" title="JSP环境搭建和入门"><img class="cover" src="https://images.unsplash.com/photo-1604436341160-be20b01ce352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">JSP环境搭建和入门</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/11.JSTL表达式/" title="11.JSTL表达式.md"><img class="cover" src="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">11.JSTL表达式.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/13.监听器/" title="13.监听器.md"><img class="cover" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">13.监听器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/12.过滤器/" title="12.过滤器.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">12.过滤器.md</div></div></a></div><div><a href="/2020/12/17/JSP和Servlet/16.连接MySQL数据库url报错问题/" title="16.连接MySQL数据库url报错问题.md"><img class="cover" src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2020-12-17</div><div class="title">16.连接MySQL数据库url报错问题.md</div></div></a></div></div></div></article></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By lemon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>

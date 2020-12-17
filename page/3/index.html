@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Serendipity - 不期而遇的美好</title><meta name="keywords" content="Java、记录"><meta name="author" content="lemon"><meta name="copyright" content="lemon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="记录自己成长的地方，迎接不期而遇的美好">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Serendipity">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="Serendipity">
+<meta property="og:description" content="记录自己成长的地方，迎接不期而遇的美好">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg">
+<meta property="article:author" content="lemon">
+<meta property="article:tag" content="Java、记录">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/3/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.2.0',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  ClickShowText: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-12-17 16:01:49'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {
+  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }
+})()</script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Serendipity" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg"></div><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Serendipity</a></span><span id="menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="site-info"><h1 id="site-title">Serendipity</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://lemon-pp.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout_page" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89--%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E5%BC%8F/" title="实现线程的方式">     <img class="post_bg" src="https://images.unsplash.com/photo-1598004295293-8167b8649571?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="实现线程的方式"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89--%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%96%B9%E5%BC%8F/" title="实现线程的方式">实现线程的方式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.484Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（一）–实现线程的方式目录[TOC]
+1. 官方声明实现多线程有两种方式。1.1 通过继承Thread类，重写Thread类的run方法12345678910public class ExtendsThreadTest extends Thread &#123;    @Override    public void run() &#123;        System.out.println(2);    &#125;    public static void main(String[] args) &#123;        new ExtendsThreadTest().start();    &#125;&#125;
+
+1.2 通过实现Runnable接口，把实例作为参数传递给Thread类1234567891011public class RunnableTest implements Runnable&#123;    @Override    public void run() &#123;        System.out.println(1);     ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%83%EF%BC%89--%E7%BA%BF%E7%A8%8B%E5%90%84%E5%B1%9E%E6%80%A7/" title="线程各属性">     <img class="post_bg" src="https://images.unsplash.com/photo-1604493858837-e785dfcb4fad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线程各属性"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%83%EF%BC%89--%E7%BA%BF%E7%A8%8B%E5%90%84%E5%B1%9E%E6%80%A7/" title="线程各属性">线程各属性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.654Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（七）–线程各属性目录[TOC]
+1. 属性概览
+2. 线程ID每个线程都有自己的ID，用于标识不同的线程。
+源码：
+123456/* Set thread ID */    tid = nextThreadID();	private static long threadSeqNumber;    private static synchronized long nextThreadID() &#123;        return ++threadSeqNumber;    &#125;
+
+线程ID通过synchronized关键字修饰的方法里，进行先++自增。所以主线程ID不是０而是１，而我们自己创建的线程也不是２，因为JVM会自动帮我们创建一些守护线程，来为我们的用户线程提供服务。
+3. 线程名称源码：
+12345678public Thread() &#123;       init(null, null, &quot;Thread-&quot; + nextThreadNum(), 0);   &#125;private static int threadInit ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B9%9D%EF%BC%89--%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%BA%A7%E7%94%9F%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/" title="多线程产生的线程安全和性能问题">     <img class="post_bg" src="https://images.unsplash.com/photo-1598004295293-8167b8649571?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多线程产生的线程安全和性能问题"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B9%9D%EF%BC%89--%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%BA%A7%E7%94%9F%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%92%8C%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98/" title="多线程产生的线程安全和性能问题">多线程产生的线程安全和性能问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.515Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（九）–多线程带来的线程安全问题和性能问题详解目录[TOC]
+1. 线程安全问题​        不管业务中遇到怎样的多个线程访问某对象或某方法的情况，而在编程这个业务逻辑的时候，都不需要额外做任何额外的处理，程序也可以运行正常，就可以称为线程安全。
+2. 产生线程安全问题的原因多个线程同时访问共享资源。
+主要两个问题：
+ 1. 数据争用：数据由于同时读写，会造成数据错误。
+ 2. 竞争条件：即使没有同时读写，由于顺序原因也有可能造成错误。
+3. 线程不安全的三种现象线程不安全的三种现象：
+
+运行结果错误，如a++在多线程情况下与期望结果不一致。
+活跃性问题：死锁、活锁、饥饿。
+对象发布和初始化的时候的安全问题。
+
+3.1 运行结果错误：12345678910111213141516171819202122232425262728/** * @author zhoup * @date 2020/4/7 15:19 * @describe */public class TwoTreadMutiTest implements Runnable&#123;    static i ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89--%E5%85%B3%E4%BA%8E%E5%81%9C%E6%AD%A2%E7%BA%BF%E7%A8%8B/" title="关于停止线程">     <img class="post_bg" src="https://images.unsplash.com/photo-1604287164424-00d54cb0bdf8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="关于停止线程"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89--%E5%85%B3%E4%BA%8E%E5%81%9C%E6%AD%A2%E7%BA%BF%E7%A8%8B/" title="关于停止线程">关于停止线程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.427Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（三）–关于停止线程目录[TOC]
+1. 原理介绍​    使用interrupt来通知，而不是强制。
+2. 停止线程的实践2.1正确的停止方法2.2.1 普通情况1234567891011121314151617181920212223/** * @author zhoup * @date 2020/3/30 18:54 * @describe run方法里面没有sleep或者wait方法时，停止线程。打印最大整数下所有10000的倍数 */public class StopThreadTest implements Runnable&#123;    @Override    public void run() &#123;        int num = 0;        while ( num &lt;= Integer.MAX_VALUE / 2)&#123;            if (num % 10000 == 0)&#123;                System.out.println(num + &quot;是10000的倍数 &quot; ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/17/JSP%E5%92%8CServlet/10.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" title="10.文件上传下载.md">     <img class="post_bg" src="https://images.unsplash.com/photo-1604367463733-dff5a4517e9d?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="10.文件上传下载.md"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/JSP%E5%92%8CServlet/10.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%B8%8B%E8%BD%BD/" title="10.文件上传下载.md">10.文件上传下载.md</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T08:01:02.275Z" title="更新于 2020-12-17 16:01:02">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/jsp/">jsp</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/jsp/">jsp</a></span></div><div class="content">文件上传下载1.文件上传1.需要导入两个jar包
+apache: 1.commons-fileupload.jar组件
+        2.commons-fileupload.jar依赖 commons-io.jar
+2.代码
+代码：前台jsp：        表单提交方式必须为post    在表单中必须增加一个属性 enctype=”multipart/form-data”
+后台servlet：
+
+ 首先判断前台jsp是否有multipart这个字段(ServletFileUpload.isMultipartContent(request);)
+
+ 拿到upload对象(ServletFileUpload upload = new ServletFileUpload(factory);)
+
+ 通过parseRequest解析form表单的所有请求字段，并保存到items集合中,即前台传递的sno sname,spicture此时就保存在了items中）
+
+ ​    upload.parseRequest(request);
+
+遍历items中的数据
+ ​    Iterator ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89--wait()%E3%80%81notify()%E5%92%8CnotifyAll()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="wait()、notify()等方法详解">     <img class="post_bg" src="https://images.unsplash.com/photo-1604493858837-e785dfcb4fad?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="wait()、notify()等方法详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89--wait()%E3%80%81notify()%E5%92%8CnotifyAll()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="wait()、notify()等方法详解">wait()、notify()等方法详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.341Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（五）–wait()、notify()和notifyAll()方法详解目录
+[TOC]
+1. 重要方法概览Thread类:
+
+sleep相关   –线程休眠
+join   —等待其他线程执行完毕
+yield相关  –放弃已经获取到的CPU资源
+currentThread相关 —获取当前执行线程的引用
+start、run相关  –启动线程相关
+interrupt相关  —中断线程
+stop、suspend、resume相关   –弃用方法
+
+Object类：
+
+wait、notify、notifyAll相关  —让线程暂时休息和唤醒
+
+2.wait、notify、notifyAll详解2.1 作用、用法1.阻塞阶段–调用wait()方法使线程休息。
+注意点：
+
+执行wait()方法首先要有这个对象的监视器monitor锁。
+调用wait()方法的线程会让出CPU，且会释放锁。
+
+只有以下四种情况之一发送才可以被唤醒：
+
+另一个线程调用该对象的notify()方法且刚好被唤醒的是本线程。
+另一个线程调用该对象的notifyAll()方法
+过来wait(long timeout) ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%85%AB%EF%BC%89--%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/" title="线程安全问题详解">     <img class="post_bg" src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="线程安全问题详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%85%AB%EF%BC%89--%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/" title="线程安全问题详解">线程安全问题详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.583Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（八）–线程未捕获异常处理详解目录[TOC]
+1. 为什么需要UncaughtExceptionHandler?1.主线程可以轻松发现异常，而子线程不可以。
+12345678910111213141516171819/** * @author zhoup * @date 2020/4/7 14:15 * @describe */public class ExceptionChildThread implements Runnable&#123;    @Override    public void run() &#123;        throw new RuntimeException();    &#125;    public static void main(String[] args) &#123;        new Thread(new ExceptionChildThread()).start();        for (int i = 0; i &lt; 1000; i++) &#123;            System.out.println ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%85%AD%EF%BC%89--sleep()%E3%80%81join()%E3%80%81yield()%E7%AD%89%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="sleep()、join()、yield()等方法详解">     <img class="post_bg" src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1576840004761&amp;di=f45253aa3e1ac8c8c184d302d03af728&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fwallpaper%2F1208%2F15%2Fc0%2F12924355_1344999165555.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="sleep()、join()、yield()等方法详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%85%AD%EF%BC%89--sleep()%E3%80%81join()%E3%80%81yield()%E7%AD%89%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="sleep()、join()、yield()等方法详解">sleep()、join()、yield()等方法详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.459Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（六）–sleep()、join()、yield()等方法详解目录[TOC]
+1.sleep()方法详解作用：让线程在预期的时间执行，其他时候不要占用CPU资源。
+性质：
+
+sleep方法不会释放锁
+sleep方法响应中断
+
+代码实现：
+1.sleep方法不会释放锁
+1234567891011121314151617181920212223242526272829/** * @author zhoup * @date 2020/4/1 17:07 * @describe   证明sleep不释放锁，等到sleep时间到了以后， * 正常结束才释放锁 */public class SleepDonotReleaseLock implements Runnable&#123;    private static Object lock = new Object();    @Override    public void run() &#123;        synchronized (lock)&#123;            System.out.println(Thr ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89--volatile%E5%85%B3%E9%94%AE%E5%AD%97/" title="volatile关键字">     <img class="post_bg" src="https://images.unsplash.com/photo-1604065318249-095f3919f957?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="volatile关键字"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89--volatile%E5%85%B3%E9%94%AE%E5%AD%97/" title="volatile关键字">volatile关键字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.685Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（十一）–volatile关键字目录[TOC]
+1. 什么是volatile？​    volatile是一种同步机制，比synchronized或者Lock相关类更轻量，因为使用volatile并不会发生上下文切换等开销很大的行为。
+2. volatile的适用场合不适合场景：a++；
+代码：
+1234567891011121314151617181920212223242526272829/** * @author zhoup * @date 2020/4/9 15:45 * @describe */public class VolatileMutil implements Runnable &#123;    volatile int a ;    AtomicInteger atomicInteger = new AtomicInteger();    @Override    public void run() &#123;        for (int i = 0; i &lt; 10000; i++) &#123;            a++;       ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89--ThreadLocal%E8%AF%A6%E8%A7%A3/" title="ThreadLocal详解">     <img class="post_bg" src="https://images.unsplash.com/photo-1604287164424-00d54cb0bdf8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ThreadLocal详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E5%8D%81%E5%9B%9B%EF%BC%89--ThreadLocal%E8%AF%A6%E8%A7%A3/" title="ThreadLocal详解">ThreadLocal详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time><span class="article-meta__separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-17T07:48:56.241Z" title="更新于 2020-12-17 15:48:56">2020-12-17</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox article-meta__icon"></i><a class="article-meta__categories" href="/categories/java/">java</a><i class="fas fa-angle-right"></i><a class="article-meta__categories" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/">并发编程</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag article-meta__icon"></i><a class="article-meta__tags" href="/tags/Java%E5%B9%B6%E5%8F%91/">Java并发</a></span></div><div class="content">Java并发（十四）–ThreadLocal详解一、两大使用场景 1.每个线程需要一个独享的对象（通常是工具类，典型需要使用的类有SimpleDateFormat和Random）。
+​    每个Thread内有自己的实例副本，不共享。
+2.每个线程内需要保存全局变量（例如拦截器中获取用户信息），可以让不同方法直接使用，避免参数传递的麻烦。
+二、ThreadLocal的两个作用1.让某个需要用到的对象在线程间隔离（每个线程都有自己的独立的对象）。
+2.在任何方法中都可以轻松获取到该对象。
+三、ThreadLocal的好处1.达到线程安全
+2.不需要加锁，提高执行效率
+3.更高效的利用内存、节省开销。
+4.避免了传参的麻烦。
+5.
+</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" src="http://pic.netbian.com/uploads/allimg/191215/000754-1576339674fcf3.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">lemon</div><div class="author-info__description">记录自己成长的地方，迎接不期而遇的美好</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length_num">48</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length_num">9</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://lemon-pp.github.io" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div></div><div class="sticky_layout"><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">有目标有计划</div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/Redis/Redis/" title="无题"><img src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2020/12/17/Redis/Redis/" title="无题">无题</a><time datetime="2020-12-17T07:56:28.103Z" title="发表于 2020-12-17 15:56:28">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89--%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%92%8C%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" title="启动线程的正确和错误方式以及原理解析"><img src="https://cdn.jsdelivr.net/gh/kylincw/images/20200718200129.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="启动线程的正确和错误方式以及原理解析"/></a><div class="content"><a class="title" href="/2020/12/17/java%E5%B9%B6%E5%8F%91/Java%E5%B9%B6%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89--%E5%90%AF%E5%8A%A8%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%92%8C%E9%94%99%E8%AF%AF%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90/" title="启动线程的正确和错误方式以及原理解析">启动线程的正确和错误方式以及原理解析</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="11.JSTL表达式.md"><img src="https://cdn.jsdelivr.net/gh/kylincw/img/img/宇航员.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="11.JSTL表达式.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/11.JSTL%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="11.JSTL表达式.md">11.JSTL表达式.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/13.%E7%9B%91%E5%90%AC%E5%99%A8/" title="13.监听器.md"><img src="https://images.unsplash.com/photo-1604432833722-d89f0be80330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="13.监听器.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/13.%E7%9B%91%E5%90%AC%E5%99%A8/" title="13.监听器.md">13.监听器.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/12/17/JSP%E5%92%8CServlet/12.%E8%BF%87%E6%BB%A4%E5%99%A8/" title="12.过滤器.md"><img src="https://images.unsplash.com/photo-1604298027700-98d678b0f7a8?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=500&amp;q=60" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="12.过滤器.md"/></a><div class="content"><a class="title" href="/2020/12/17/JSP%E5%92%8CServlet/12.%E8%BF%87%E6%BB%A4%E5%99%A8/" title="12.过滤器.md">12.过滤器.md</a><time datetime="2020-12-17T07:02:25.000Z" title="发表于 2020-12-17 15:02:25">2020-12-17</time></div></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="card-content"><div class="item-headline"><i class="fas fa-bolt"></i><span>最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="card-widget card-categories"><div class="card-content"><div class="item-headline"><i class="fas fa-folder-open"></i><span>分类</span></div><ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SSM/"><span class="card-category-list-name">SSM</span><span class="card-category-list-count">3</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SSM/SpringMVC/"><span class="card-category-list-name">SpringMVC</span><span class="card-category-list-count">3</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/"><span class="card-category-list-name">java</span><span class="card-category-list-count">16</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/java/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"><span class="card-category-list-name">并发编程</span><span class="card-category-list-count">16</span></a></li></ul><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/jsp/"><span class="card-category-list-name">jsp</span><span class="card-category-list-count">17</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/"><span class="card-category-list-name">工具</span><span class="card-category-list-count">2</span></a></li><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%B7%A5%E5%85%B7/PicGo/"><span class="card-category-list-name">PicGo</span><span class="card-category-list-count">1</span></a></li></ul>
+            <li class="card-category-list-item more is-center"><a class="card-category-list-link-more" href="/categories/">
+                <span>查看更多</span><i class="fas fa-angle-right"></i></a></li>
+            </ul></div></div><div class="card-widget card-tags"><div class="card-content"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/IDEA/" style="font-size: 1.1em; color: #999">IDEA</a> <a href="/tags/Java%E5%B9%B6%E5%8F%91/" style="font-size: 1.4em; color: #99a5b6">Java并发</a> <a href="/tags/Linux/" style="font-size: 1.3em; color: #99a1ac">Linux</a> <a href="/tags/PicGo/" style="font-size: 1.1em; color: #999">PicGo</a> <a href="/tags/SpringMVC/" style="font-size: 1.2em; color: #999da3">SpringMVC</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/jsp/" style="font-size: 1.5em; color: #99a9bf">jsp</a> <a href="/tags/oracle/" style="font-size: 1.2em; color: #999da3">oracle</a></div></div></div><div class="card-widget card-archives"><div class="card-content"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/12/"><span class="card-archive-list-date">十二月 2020</span><span class="card-archive-list-count">36</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/11/"><span class="card-archive-list-date">十一月 2020</span><span class="card-archive-list-count">12</span></a></li></ul></div></div><div class="card-widget card-webinfo"><div class="card-content"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">48</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2020-12-17T08:01:49.380Z"></div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">69k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2020-12-17T08:01:49.431Z"></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 By lemon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  if (true) { 
+    var typed = new Typed("#subtitle", {
+      strings: "有计划，有目标，Never put off till tomorrow what you can do today".split(","),
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50
+    })
+  } else {
+    document.getElementById("subtitle").innerHTML = '有'
+  }
+}
+
+if (true) {
+  if (typeof Typed === 'function') subtitleType()
+  else $.getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js', subtitleType)
+} else {
+  subtitleType()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script></div></body></html>
